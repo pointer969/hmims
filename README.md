@@ -1,1 +1,2 @@
-# hmims
+# HMIMS
+Harman Inventory Management System
