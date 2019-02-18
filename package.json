@@ -10,7 +10,9 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "mongoose": "^5.4.13",
+    "mongoose-activitylogs": "^2.1.15",
     "morgan": "~1.9.0",
+    "path": "^0.12.7",
     "winston": "^3.2.1"
   }
 }
