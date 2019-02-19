@@ -1,7 +1,7 @@
 
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+var bodyParser      = require('body-parser')
 var logger = require('winston');
 var config = require('./config');
 var mongoose = require('mongoose');
@@ -11,10 +11,14 @@ var indexRouter = require('./routes/index');
 var app = express();
 
 // Middleware Settings
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser());
+app.use(express.static(path.join(__dirname, 'webapp')));
+app.use("/resources",express.static(__dirname + '/resources'));
+console.log(__dirname);
+/* GET home page. */
+app.get('/', function(req, res, next) {    
+    res.sendFile('index.html');
+  });
 
 // Mongoose Connection
 mongoose.Promise = global.Promise;
